@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd"> 
+    
+    <util:list id="dataList1" list-class="java.util.ArrayList">
+        <value>V1</value>
+        <value>V2</value>
+    </util:list>
+        
+    <util:list id="dataList2" list-class="java.util.ArrayList">
+        <ref bean="occupationA"/>
+        <ref bean="occupationB"/>
+    </util:list>
+    
+                
+    <util:list id="dataList3" list-class="java.util.ArrayList">
+        <value>V3</value>
+        <ref bean="occupationC"/>
+        <value>V4</value>
+    </util:list>                                   
+    
+</beans>

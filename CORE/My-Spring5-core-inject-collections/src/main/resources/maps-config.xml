@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd"> 
+    
+    <util:map id="dataMap1">
+        <entry key="k1" value="V1"/>
+        <entry key="k2" value="V2"/>
+        <entry key="k3" value="V3"/>
+    </util:map>
+    
+   <util:map id="dataMap2">
+        <entry key="key1" value="1"/>
+        <entry key="key2" value="2"/>
+        <entry key="key3" value="3"/>
+    </util:map>
+    
+   <util:map id="dataMap3">
+        <entry key-ref="personA" value-ref="occupationA"/>
+        <entry key-ref="personB" value-ref="occupationB"/>
+        <entry key-ref="personC" value-ref="occupationC"/>
+    </util:map>
+     
+</beans>
