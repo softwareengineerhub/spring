@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+">
+    <context:annotation-config/>
+    <context:component-scan base-package="com.core.app"/>
+    
+     <context:property-placeholder location="data.properties"/>
+    
+    <!-- 
+    Stereotype Annotations
+    @Component, @Service, @Repository
+    
+    Semantically the same
+    
+    @Component - any POJO
+    @Service - business logic layer
+    @Repository - data layer
+    
+    
+    Injecting by:
+    1. Member
+    2. Setter
+    3. Constructor
+    
+    JSR-330
+    Dependency injection for Java
+    -->
+    
+</beans>
