@@ -8,6 +8,7 @@ package com.core.app.myconfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  *
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan({"com.core.app.myconfig"})
+@PropertySource(value = "classpath:data.properties")
 public class AppConfig {
     
     @Bean
