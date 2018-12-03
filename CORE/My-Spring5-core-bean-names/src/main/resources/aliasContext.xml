@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"     
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="item1" class="com.mycompany.my.spring5.core.bean.alias.MyData">
+        <property name="name" value="item1"/>
+        <property name="count" value="1"/>
+    </bean>
+    <bean id="item2" class="com.mycompany.my.spring5.core.bean.alias.MyData">
+        <property name="name" value="item2"/>
+        <property name="count" value="2"/>
+    </bean>
+    <bean id="item3" class="com.mycompany.my.spring5.core.bean.alias.MyData">
+        <property name="name" value="item2"/>
+        <property name="count" value="3"/>
+    </bean>
+    
+    
+    <bean id="item4" name="a,b,;c" class="com.mycompany.my.spring5.core.bean.alias.MyData">
+        <property name="name" value="item-alias"/>
+        <property name="count" value="4"/>        
+    </bean>
+    
+    
+    <alias name="item4" alias="myItem"/>
+    
+</beans>

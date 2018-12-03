@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"     
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myDog1" class="com.mycompany.my.spring5.core.bean.names.MyDog">
+        <property name="name" value="dog1"/>
+    </bean>
+    <bean name="myDog2" class="com.mycompany.my.spring5.core.bean.names.MyDog">
+        <property name="name" value="dog2"/>
+    </bean>
+    <bean id="myDog3Id" name="myDog3Name" class="com.mycompany.my.spring5.core.bean.names.MyDog">
+        <property name="name" value="dog3"/>
+    </bean>
+    
+    <bean class="com.mycompany.my.spring5.core.bean.names.MyCat">
+        <property name="name" value="cat1"/>
+    </bean>
+    
+    
+    
+</beans>
