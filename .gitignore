@@ -5,3 +5,6 @@
 /CORE/My-Spring5-core-app-annotation-props/target
 /CORE/My-Spring5-core-app-annotations/target
 /CORE/My-Spring5-core-app-javaconf/target
+/CORE/My-Spring5-advancedcore-app-disposablebean/target
+/CORE/My-Spring5-advancedcore-app-applicationcontextaware/target
+/CORE/My-Spring5-advancedcore-app-beannameaware/target
