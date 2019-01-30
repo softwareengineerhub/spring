@@ -22,7 +22,7 @@ import org.springframework.jms.core.JmsTemplate;
  */
 @SpringBootApplication
 @EnableJms
-@ComponentScan(basePackages = {"com"})
+@ComponentScan(basePackages = {"com.mycompany.my.spring5.jms.example"})
 public class MySpringConfig {
     
     @Bean
