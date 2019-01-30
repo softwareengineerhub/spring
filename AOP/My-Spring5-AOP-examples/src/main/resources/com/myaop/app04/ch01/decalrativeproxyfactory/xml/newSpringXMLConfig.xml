@@ -1,0 +1,13 @@
+ <bean id="artist" class="com.myaop.app04.ch01.decalrativeproxyfactory.xml.Artist"/>
+    <bean id="advice" class="com.myaop.app04.ch01.decalrativeproxyfactory.xml.ArtistAdvice"/>
+    
+    <!--<bean id="proxyOne" class="org.springframework.aop.framework.ProxyFactoryBean" 
+          p:target-ref="artist" p:interceptorNames-ref="interceptorAdviceNames"/>
+    
+    <bean id="advisor" class="org.springframework.aop.support.DefaultPointcutAdvisor" p:advice-ref="advice">
+        <property name="pointcut">
+            <bean class="org.springframework.aop.aspectj.AspectJExpressionPointcut" 
+                  p:expression="execution(* doAction(..))" />
+        </property>
+    </bean>
+    -->
