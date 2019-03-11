@@ -8,3 +8,16 @@
 /CORE/My-Spring5-advancedcore-app-disposablebean/target
 /CORE/My-Spring5-advancedcore-app-applicationcontextaware/target
 /CORE/My-Spring5-advancedcore-app-beannameaware/target
+/JMS/My-Spring5-JMS-example2/target
+/JMS/My-Spring5-JMS-example/target
+/JMX/My-Spring50JMS-example3/target
+/JMX/Spring5-JMX-app/target
+/AOP/My-Spring5-AOP-examples/target
+/Scheduler/My-Spring5-Schedule-example/target
+/Validation/My-Spring5-Validation-example/target
+/JDBC/My-Spring5-JDBC/target
+/JPA-data-Hibernate/My-Spring5-Hibernate/target
+/JPA-data-Hibernate/My-Spring5-JPA/target
+/JPA-data-Hibernate/My-Spring5-JPA-data/target
+/JTA/My-Spring5-JTA-datasources/target
+/JTA/My-Spring5-JTA-database-jms/target
