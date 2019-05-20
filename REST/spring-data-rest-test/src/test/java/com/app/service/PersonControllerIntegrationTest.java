@@ -30,7 +30,7 @@ public class PersonControllerIntegrationTest {
     private MockMvc mockMvc;
     
   //  @Test
-    public void test() throws Exception{
+    public void test() throws Exception {
         RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/count");
         ResultActions res=mockMvc.perform(requestBuilder);
         Object resObj=res.andReturn().getHandler();

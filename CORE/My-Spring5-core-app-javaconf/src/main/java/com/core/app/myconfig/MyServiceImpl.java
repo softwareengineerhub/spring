@@ -67,4 +67,8 @@ public class MyServiceImpl implements MyService {
         }
     }
 
+    public void destroy() {
+        System.out.println("destroy()");
+    }
+
 }
