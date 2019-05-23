@@ -18,7 +18,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 
         Employee emp = ctx.getBean(Employee.class);
         System.out.println(emp);
@@ -34,6 +34,8 @@ public class Main {
         for (MyPerson person : list) {
             System.out.println(person);
         }
+        
+        ctx.destroy();
 
     }
 

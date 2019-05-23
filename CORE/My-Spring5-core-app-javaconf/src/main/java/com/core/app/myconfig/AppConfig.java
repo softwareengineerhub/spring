@@ -24,7 +24,7 @@ public class AppConfig {
         return new MyRepositoryImpl();
     }
     
-    @Bean(name = "myService")
+    @Bean(name = "myService", destroyMethod = "destroy")
     public MyService getMyService(){
         MyService myService = new MyServiceImpl(getRepository());
         return myService;

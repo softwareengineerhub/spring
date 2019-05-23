@@ -8,7 +8,7 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.core.app"/>
     
-     <context:property-placeholder location="data.properties"/>
+    <context:property-placeholder location="data.properties"/>
     
     <!-- 
     Stereotype Annotations
