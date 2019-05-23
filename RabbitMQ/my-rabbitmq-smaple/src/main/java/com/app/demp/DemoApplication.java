@@ -18,6 +18,6 @@ public class DemoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... strings) throws Exception {
 		//rabbitTemplate.convertAndSend("Hello, Rabbit!!!");
-		rabbitTemplate.convertAndSend("TestExchange", "TestRouting", "Hello, Rabbit!!!");
+		rabbitTemplate.convertAndSend("TestExchange", "TestRoutingKey", "Hello, Rabbit!!!");
 	}
 }
