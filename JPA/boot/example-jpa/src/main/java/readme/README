@@ -1,0 +1,69 @@
+https://www.youtube.com/watch?v=Zyqpo8gxSO0
+https://www.baeldung.com/spring-data-jpa-query
+
+----------------------------------------------------------------------------
+
+
+
+
+
+
+JPA has delayed writing - tries to write data to db as late as possible
+
+EntityManager works as first level cache
+
+em.find - firstly goes to cache (I have entity by this id and do not ask db)
+
+----------------------------------------------------------------------------
+
+JPA - end of transaction flush changes to the db
+---------------------------------------------------------------------------
+
+If out of tr scope
+Person person = personService.loadPerson(id);
+person.getAddress();
+person.getHobbies().forEach(System.out::println);// lazy loading (will be an error )
+forEach - triggers exception (when you try to iterate)
+---------------------------------------------------------------------------
+
+
+SPRING DATA JPA
+---------------------------------------------------------------------------
+This is not a replacement of spring-jpa, but this is add on.
+it is there to make your work with JPA nicer and easier
+
+1. SIMplifies CRUD:
+interface PersonRepository extends JpaRepository<Person, Long>{}
+
+@Autowired
+PersonRepository persons;
+
+Person p = persons.save(createPerson());
+
+persons.findById(id);
+persons.findAll();
+persons.deleteAll();
+
+----------------------------------------------------------
+Question: Do we need repository for each Entity ?
+- No
+
+You need for every AGGREGATE or for any AGGREGATE ROOT; (from DOMAIN DRIVEN DESIGN)
+AGGREGATE - class of entities that should be handled as 1 thing all the time
+For example:
+Order
+    - OrderItems
+
+
+
+
+
+
+---------------------------------------------------------------
+The Aggregate Root
+Spring Data repositories are inspired by the repository as described in the book Domain Driven Design by Eric Evans.
+One consequence of this is that you should have a repository per Aggregate Root. 
+Aggregate Root is another concept from the same book and describes an entity which controls the lifecycle of other entities which together are an Aggregate.
+ An Aggregate is a subset of your model which is consistent between method calls to your Aggregate Root.
+
+Spring Data JDBC tries its best to encourage modeling your domain along these ideas.
