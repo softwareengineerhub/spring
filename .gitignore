@@ -38,3 +38,10 @@
 /JMS/spring-boot-jms-advanced-durable-topic/.idea
 /JMS/spring-boot-jms-advanced-durable-topic/spring-boot-jms-advanced-durable-topic.iml
 /JMS/spring-boot-jms-advanced-durable-topic/target
+/JPA/boot/example-jpa-spring-data/target
+/JPA/boot/example-jpa-spring/target
+/JPA/boot/example-jpa-spring/nbproject
+/JPA/boot/example-jpa/target
+/JDBC/user-crud-service-spring-data-jdbc/target
+/JDBC/user-crud-service-spring-data-jdbc/user-crud-service-spring-data-jdbc.iml
+/JDBC/user-crud-service-spring-data-jdbc/.idea
