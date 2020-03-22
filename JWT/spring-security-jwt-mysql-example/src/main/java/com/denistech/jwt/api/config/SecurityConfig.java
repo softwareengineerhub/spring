@@ -44,8 +44,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder(){
         PasswordEncoder passwordEncoder = new Argon2PasswordEncoder();
-      //  return passwordEncoder;
-        return NoOpPasswordEncoder.getInstance();
+        return passwordEncoder;
+      //  return NoOpPasswordEncoder.getInstance();
     }
 
     @Bean(name= BeanIds.AUTHENTICATION_MANAGER)
