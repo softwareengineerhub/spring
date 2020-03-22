@@ -55,3 +55,5 @@ target/
 /JWT/spring-secutirty-gwt-example/mvnw.cmd
 /JWT/spring-security-jwt-mysql-example/.idea
 /JWT/spring-security-jwt-mysql-example
+/JWT/spring-security-jwt-mysql-jdbc-example/.idea
+/JWT/spring-security-jwt-mysql-jdbc-example/*.iml
