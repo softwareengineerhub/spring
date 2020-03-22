@@ -50,3 +50,8 @@ target/
 /JPA-data-Hibernate/My-Spring5-JPA-data/.idea
 /JMX/My-Spring50JMS-example3/.idea
 /AOP/aspect-example/target/
+/JWT/spring-secutirty-gwt-example/.mvn
+/JWT/spring-secutirty-gwt-example/mvnw
+/JWT/spring-secutirty-gwt-example/mvnw.cmd
+/JWT/spring-security-jwt-mysql-example/.idea
+/JWT/spring-security-jwt-mysql-example
