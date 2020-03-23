@@ -24,7 +24,7 @@ public class WelcomeController {
         return "Welcome to site!";
     }
 
-    /*@PostMapping("/authenticate")
+    @PostMapping("/authenticate")
     public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
         try {
             authenticationManager.authenticate(
@@ -34,9 +34,9 @@ public class WelcomeController {
             throw new Exception("inavalid username/password");
         }
         return jwtUtil.generateToken(authRequest.getUserName());
-    }*/
+    }
 
-    @PostMapping("/authenticate")
+    /*@PostMapping("/authenticate")
     public String generateToken(@RequestBody AuthRequest authRequest){
         System.out.println("authRequest="+authRequest);
         System.out.println("authRequest.getUsername()="+authRequest.getUserName());
@@ -44,6 +44,6 @@ public class WelcomeController {
        // authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getPassword(), authRequest.getUsername()));
         return jwtUtil.generateToken(authRequest.getUserName());
         //return "OK";
-    }
+    }*/
 
 }
