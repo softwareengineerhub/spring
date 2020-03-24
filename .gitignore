@@ -57,3 +57,4 @@ target/
 /JWT/spring-security-jwt-mysql-example
 /JWT/spring-security-jwt-mysql-jdbc-example/.idea
 /JWT/spring-security-jwt-mysql-jdbc-example/*.iml
+/JWT/spring-security-jwt-nats/.idea
