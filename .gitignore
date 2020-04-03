@@ -61,3 +61,4 @@ target/
 /JWT/spring-security-jwt-nats2/.idea
 /JWT/spring-security-jwt-nats3/*.iml
 /JWT/spring-security-jwt-nats3/.idea
+/JWT/tokens-validation-and-sign/.idea
