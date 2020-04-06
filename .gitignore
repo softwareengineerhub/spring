@@ -1,4 +1,5 @@
 target/
+.idea/
 /Security/spring-security-basic/target
 /Security/spring-security-database/target
 /CORE/My-Spring5-core-app-xml/target
