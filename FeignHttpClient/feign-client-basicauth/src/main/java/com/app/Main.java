@@ -15,8 +15,6 @@ import com.mycompany.feign.client.PersonClient;
  */
 
 public class Main {
-    
-    
 
     public static void main(String[] args) {
         MyConfig myConfig = new MyConfig();

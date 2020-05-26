@@ -27,7 +27,7 @@ public class MyConfig {
                 .client(new OkHttpClient())
                 .encoder(new GsonEncoder())
                 .decoder(new GsonDecoder())
-                .logger(new Slf4jLogger(PersonClient.class))
+                .logger(new Logger.JavaLogger())
                 .logLevel(Logger.Level.FULL)
                 .target(PersonClient.class, "http://localhost:8080/");
         return personClient;
