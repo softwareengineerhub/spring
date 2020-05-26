@@ -10,11 +10,15 @@ import com.app.model.PersonResource;
 import com.mycompany.feign.client.PersonClient;
 import feign.Feign;
 import feign.Logger;
+import feign.Response;
 import feign.gson.GsonDecoder;
 import feign.gson.GsonEncoder;
 import feign.okhttp.OkHttpClient;
-import feign.slf4j.Slf4jLogger;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+//import feign.slf4j.Slf4jLogger;
 import java.util.List;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -30,10 +34,40 @@ public class Main implements CommandLineRunner{
     private PersonClient personClient;
 
     public static void main(String[] args) {
+        System.setProperty("server.port", "8081");
         SpringApplication.run(Main.class, args);
     }
+    
+    public void run(String... args) throws Exception {
+        PersonResource pr = personClient.findById(0);
+        
+        Person person = new Person("addName", 10);
+        Response response =  personClient.add(person);
+        
+        System.out.println("------------response------------");
+        System.out.println(response.headers());
+        System.out.println("------------response------------");
+        
+        System.out.println("------------response.body------------");
+        BufferedReader reader = new BufferedReader(response.body().asReader());
+        String line = null;
+        StringBuilder sb = new StringBuilder();
+        while((line = reader.readLine())!=null){
+            sb.append(line);
+        }
+        System.out.println(sb);
+        System.out.println("------------response.body------------");
+        
+        System.out.println("------------response.status------------");        
+        System.out.println(response.status());
+        System.out.println("------------response.status------------");
+        
+        
+      //  List<Person> list = personClient.findAll();
+       // System.out.println(list.size());
+    }
 
-    @Override
+    /*@Override
     public void run(String... args) throws Exception {
         PersonResource pr = personClient.findById(0);
         Person p = pr.getPerson();
@@ -48,6 +82,6 @@ public class Main implements CommandLineRunner{
         
         List<Person> list = personClient.findAll();
         System.out.println(list);
-    }
+    }*/
 
 }
