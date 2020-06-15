@@ -1,0 +1,20 @@
+yaml file can be overriden by ENV_VARIABLE (like JAVA_HOME)
+
+my.openid:
+  uiClientId: test
+  uiClientId2: TEST2
+
+Preferable priority (both are valid):
+1) MY_OPENID_UICLIENTID
+2) MY_OPENID_UI_CLIENT_ID
+
+
+---------------------------------------------------------------------
+To override yaml's values with system variables (all variants are equal):
+System.setProperty("my.openid.uiClientId", "QQQQQ");
+System.setProperty("my.openid.uiClient-id", "override1");
+System.setProperty("my.openid.ui-client-id", "override2");
+-Dmy.openid.uiClientId=QQQQQ
+--------------------------------------------------------------------
+Important:
+eventhought there is no such data in yaml, but it is presented in ENV variable - value will be set from ENV variable
