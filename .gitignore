@@ -63,3 +63,5 @@ target/
 /JWT/spring-security-jwt-nats3/*.iml
 /JWT/spring-security-jwt-nats3/.idea
 /JWT/tokens-validation-and-sign/.idea
+/Yaml_And_Props/spring-boot-props-system/*.iml
+/JPA/boot/spring-boot-data-jpa-pageable/*.iml
