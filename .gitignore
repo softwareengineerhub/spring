@@ -65,3 +65,15 @@ target/
 /JWT/tokens-validation-and-sign/.idea
 /Yaml_And_Props/spring-boot-props-system/*.iml
 /JPA/boot/spring-boot-data-jpa-pageable/*.iml
+/JPA/boot/spring-boot-data-jpa-pageable2/*.iml
+/JPA/boot/spring-boot-data-jpa-pageable-cron/*.iml
+/REST/spring-boot-rest-naming/*.iml
+/FeignHttpClient/feign-client-basicauth/*.iml
+/FeignHttpClient/feign-spring-client2/*.iml
+/FeignHttpClient/feign-spring-client/*.iml
+/file-upload/spring-boot-files-upload/*.iml
+/JPA/boot/spring-data-jpa/*.iml
+/JPA/boot/spring-jpa/*.iml
+/REST/spring-data-rest/*.iml
+/TEST/spring-test-rest-controller/*.iml
+/FeignHttpClient/feign-introduction/.mvn/wrapper

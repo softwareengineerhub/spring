@@ -45,10 +45,27 @@ public class SFMain implements CommandLineRunner{
         //getAllAssetsByAccountNameWithParam();
         //getAssetByName();
         //getAssetByNameWithParameter();
-        getAssetMetaByNameWithParameter();
+        //getAssetMetaByNameWithParameter();
         //getAssetMetaByName2();
+        getAccountMetaByName();
+    }
 
-
+    private void getAccountMetaByName(){
+        Map<String, Object> response = sfClient.getAccountMetaByName("test");
+        System.out.println("#######response="+response);
+        List<Map<String, Object>> records = (List) response.get("records");
+        System.out.println("#######records.size="+records.size());
+        List<String> res = new ArrayList();
+        for(Map<String, Object> record: records){
+            System.out.println("!!!!!!!!!!!!"+record);
+            System.out.println("!!!!!!!!!!!!name="+record.get("Name"));
+            System.out.println(String.format("ShippingStreet=%s", record.get("ShippingStreet")));
+            System.out.println(String.format("ShippingCity=%s", record.get("ShippingCity")));
+            System.out.println(String.format("ShippingState=%s", record.get("ShippingState")));
+            System.out.println(String.format("ShippingPostalCode=%s", record.get("ShippingPostalCode")));
+            System.out.println(String.format("ShippingCountry=%s", record.get("ShippingCountry")));
+            System.out.println(String.format("Business_Unit__c=%s", record.get("Business_Unit__c")));
+        }
     }
 
     private void getAllAssetsByAccountName() throws Exception {
@@ -109,10 +126,6 @@ public class SFMain implements CommandLineRunner{
         }
     }
 
-    private void getAssetMetaByName2() throws Exception {
-        AssetMetaDto assetMetaDto = sfClient.getAssetMetaByName2("assert1.2");
-        System.out.println("!!!!!"+assetMetaDto);
-    }
 
 
     private void readAccountByNameWithParam() throws Exception {
