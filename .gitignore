@@ -78,3 +78,4 @@ target/
 /TEST/spring-test-rest-controller/*.iml
 /FeignHttpClient/feign-introduction/.mvn/wrapper
 /Dto/spring-boot-dto/spring-boot-dto.iml
+/file-upload/spring-boot-rest-file-upload/*.iml
