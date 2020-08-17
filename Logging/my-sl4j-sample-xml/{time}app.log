@@ -1,0 +1,5 @@
+12:53:36.120 [main] TRACE com.app.service.MyService - A TRACE Message
+12:53:36.120 [main] DEBUG com.app.service.MyService - A DEBUG Message
+12:53:36.120 [main] INFO  com.app.service.MyService - An INFO Message
+12:53:36.120 [main] WARN  com.app.service.MyService - A WARN Message
+12:53:36.120 [main] ERROR com.app.service.MyService - An ERROR Message

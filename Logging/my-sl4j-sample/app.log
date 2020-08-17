@@ -1,0 +1,5 @@
+2020-08-17 12:27:53,802 TRACE com.app.service.MyService [restartedMain] A TRACE Message
+2020-08-17 12:27:53,802 DEBUG com.app.service.MyService [restartedMain] A DEBUG Message
+2020-08-17 12:27:53,803 INFO com.app.service.MyService [restartedMain] An INFO Message
+2020-08-17 12:27:53,803 WARN com.app.service.MyService [restartedMain] A WARN Message
+2020-08-17 12:27:53,803 ERROR com.app.service.MyService [restartedMain] An ERROR Message
