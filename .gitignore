@@ -81,3 +81,4 @@ target/
 /file-upload/spring-boot-rest-file-upload/*.iml
 /AOP/aspect-example/.idea
 /WebSocket/spring-boot2-websocket-app/spring-boot2-websocket-app.iml
+/JMS/spring-boot2-jms-queue-listener/spring-boot2-jms-queue-listener.iml
