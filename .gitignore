@@ -80,3 +80,4 @@ target/
 /Dto/spring-boot-dto/spring-boot-dto.iml
 /file-upload/spring-boot-rest-file-upload/*.iml
 /AOP/aspect-example/.idea
+/WebSocket/spring-boot2-websocket-app/spring-boot2-websocket-app.iml
