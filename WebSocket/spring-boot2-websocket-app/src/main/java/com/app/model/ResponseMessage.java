@@ -1,13 +1,13 @@
 package com.app.model;
 
-public class Greeting {
+public class ResponseMessage {
 
 	private String content;
 
-	public Greeting() {
+	public ResponseMessage() {
 	}
 
-	public Greeting(String content) {
+	public ResponseMessage(String content) {
 		this.content = content;
 	}
 

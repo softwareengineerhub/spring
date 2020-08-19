@@ -1,13 +1,13 @@
 package com.app.model;
 
-public class HelloMessage {
+public class RequestMessage {
 
 	private String name;
 
-	public HelloMessage() {
+	public RequestMessage() {
 	}
 
-	public HelloMessage(String name) {
+	public RequestMessage(String name) {
 		this.name = name;
 	}
 
