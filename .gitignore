@@ -83,3 +83,7 @@ target/
 /WebSocket/spring-boot2-websocket-app/spring-boot2-websocket-app.iml
 /JMS/spring-boot2-jms-queue-listener/spring-boot2-jms-queue-listener.iml
 /JMS/spring-boot-jms-queue/*.iml
+/JTA/My-Spring5-JTA-datasources/*.lck
+/JTA/My-Spring5-JTA-datasources/tmlog3.log
+/JTA/spring-boot2-jta-sql-jdbc/*.iml
+/JTA/spring-boot2-jta-sql-jpa/*.iml
