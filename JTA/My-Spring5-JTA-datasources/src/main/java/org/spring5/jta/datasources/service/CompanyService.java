@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @author Denys.Prokopiuk
  */
 @Service
-//@Transactional
+@Transactional(Transactional.TxType.REQUIRES_NEW)
 public class CompanyService {
 
     @Autowired

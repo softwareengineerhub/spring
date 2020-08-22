@@ -12,17 +12,19 @@ package org.spring5.jta.datasources.repository;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 import javax.transaction.Transactional;
 import org.spring5.jta.datasources.model.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 @Repository
-//@Transactional
+@Transactional
 public class EmployeeRepository {
 
-    @Resource(name = "employeeDataSource")
+    @Autowired
+    @Qualifier("employeeDataSource")
     private DataSource dataSource;
 
 
