@@ -3,16 +3,15 @@ package com.app.config;
 import com.app.model.AccountDto;
 import com.app.model.AssetMetaDto;
 import feign.Response;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 //https://eu31.salesforce.com/services/data/v20.0/sobjects/Account/
 /// services/data/v20.0/sobjects/Account/
 public interface SFClient {
+
+
 
 
     @PostMapping("/services/data/v20.0/sobjects/Account/")
@@ -58,5 +57,24 @@ public interface SFClient {
 
     @GetMapping("/services/data/v20.0/query/?q=select ShippingStreet,ShippingCity,ShippingState,ShippingPostalCode,ShippingCountry,Business_Unit__c from Account where Name='{accountName}'")
     public Map<String, Object> getAccountMetaByName(@PathVariable String accountName);
+
+    @GetMapping("/services/data/v20.0/query/?q=SELECT Id,name From Asset WHERE Account.Name='{accountName}' AND MyField__c='{myField}'")
+    public Map<String, Object> getAssetByAccountNameAndCustomFieldValue(@PathVariable String accountName, @PathVariable String myField);
+
+    @GetMapping("/services/data/v20.0/query/?q=select Account.Name from Asset where Asset.Name='{assetName}'")
+    public Map<String, Object> getAccountNameByAssetName(@PathVariable String assetName);
+
+    @GetMapping("/services/data/v20.0/query/?q=select Account.Name from Asset where Asset.Id='{assetId}'")
+    public Map<String, Object> getAccountNameByAssetId(@PathVariable String assetId);
+
+    @PatchMapping("/services/data/v20.0/sobjects/Asset/{assetId}")
+    public void updateAssetCustomField(@PathVariable String assetId, @RequestBody Map<String, Object> map);
+
+    //@GetMapping("/services/data/v20.0/query/?q=SELECT Id,name From Asset WHERE Account.Name='{accountName}' AND MyField__c='{myField}'")
+    //public Map<String, Object> getAssetByAccountNameAndCustomFieldValueWithSubQuery(@PathVariable String accountName, @PathVariable String myField);
+
+
+
+    //
 
 }

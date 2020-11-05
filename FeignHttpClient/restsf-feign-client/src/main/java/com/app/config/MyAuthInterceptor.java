@@ -18,7 +18,9 @@ public class MyAuthInterceptor implements RequestInterceptor {
         LinkedMultiValueMap<String, String> requestParameters = new LinkedMultiValueMap();
 
         requestParameters.add("username","denys.prokopiuk@gmail.com");
-        requestParameters.add("password","Jk0508257123tba6OYhSPirFXCDpV4kGqwW8");
+        //requestParameters.add("password","2019Portnykovn4p7oJD0z7FjBOtAnOO4g2G3");
+        requestParameters.add("password","2019Portnykovn4p7oJD0z7FjBOtAnOO4g2G3");
+
         requestParameters.add("grant_type","password");
         requestParameters.add("client_id","3MVG9wEVwV0C9ejAB.lOaJKjz45.lUQW_Ah35zqoeluxqPsKhi3ga4RJYKeXJGSDJhERk2JGgspfjjWIO2amW");
         requestParameters.add("client_secret","B88DD6282EA19A159683913341139B614C2D993D3127D841354F2353FE61D76F");

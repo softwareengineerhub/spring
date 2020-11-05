@@ -16,6 +16,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.BufferedReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -47,7 +48,79 @@ public class SFMain implements CommandLineRunner{
         //getAssetByNameWithParameter();
         //getAssetMetaByNameWithParameter();
         //getAssetMetaByName2();
-        getAccountMetaByName();
+        //getAccountMetaByName();
+        //getAssetByAccountNameAndCustomFieldValue();
+        //getAccountNameByAssetName();
+        //getAssetByAccountNameWithSubQuery();
+        //getAssetByAccountNameAndCustomFieldValueWithSubQuery();
+        //findAndUpdateAssertWithSameValueOfField("MyTestAssert", "B");
+
+        makeUpdateOfUniqueueField("02i5I000005oSLBQA2", "A");
+    }
+
+    private void makeUpdateOfUniqueueField(String currentAsset, String myFieldValue){
+        findAndUpdateAssertWithSameValueOfFieldById("02i5I000005oSLBQA2", "A");
+        Map map = new HashMap<>();
+        map.put("MyField__c", "A");
+        sfClient.updateAssetCustomField("02i5I000005oSLBQA2", map);
+    }
+
+    private void findAndUpdateAssertWithSameValueOfField(String currentAsset, String myFieldValue){
+        Map<String, Object> map = sfClient.getAccountNameByAssetName("MyTestAssert");
+        if(!"0".equalsIgnoreCase(map.get("totalSize")+"")) {
+            map = ((List<Map<String, Object>>) map.get("records")).get(0);
+            map = (Map<String, Object>) map.get("Account");
+            String nameOfAccount = map.get("Name") + "";
+            map = sfClient.getAssetByAccountNameAndCustomFieldValue(nameOfAccount, myFieldValue);
+           // System.out.println("map=" + map);
+            if(!"0".equalsIgnoreCase(map.get("totalSize")+"")) {
+                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!");
+                map = ((List<Map<String, Object>>) map.get("records")).get(0);
+               // map = (Map<String, Object>) map.get("attributes");
+                String assertId = map.get("Id")+"";
+                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!assertId="+assertId);
+                map = new HashMap<>();
+                map.put("MyField__c", "");
+                sfClient.updateAssetCustomField(assertId, map);
+            }
+        }
+        //String
+    }
+
+    private void findAndUpdateAssertWithSameValueOfFieldById(String currentAssetId, String myFieldValue){
+        Map<String, Object> map = sfClient.getAccountNameByAssetId(currentAssetId);
+        if(!"0".equalsIgnoreCase(map.get("totalSize")+"")) {
+            map = ((List<Map<String, Object>>) map.get("records")).get(0);
+            map = (Map<String, Object>) map.get("Account");
+            String nameOfAccount = map.get("Name") + "";
+            map = sfClient.getAssetByAccountNameAndCustomFieldValue(nameOfAccount, myFieldValue);
+            // System.out.println("map=" + map);
+            if(!"0".equalsIgnoreCase(map.get("totalSize")+"")) {
+                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!");
+                map = ((List<Map<String, Object>>) map.get("records")).get(0);
+                // map = (Map<String, Object>) map.get("attributes");
+                String assertId = map.get("Id")+"";
+                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!assertId="+assertId);
+                map = new HashMap<>();
+                map.put("MyField__c", "");
+                sfClient.updateAssetCustomField(assertId, map);
+            }
+        }
+        //String
+    }
+
+    private void getAccountNameByAssetName(){
+        System.out.println("------getAccountNameByAssetName------");
+        Map<String, Object> map = sfClient.getAccountNameByAssetName("MyTestAssert");
+        System.out.println(map);
+        System.out.println("-------getAccountNameByAssetName-----");
+    }
+
+    private void getAssetByAccountNameAndCustomFieldValue(){
+        System.out.println("------getAssetByAccountNameAndCustomFieldValue------");
+        Map<String, Object> map = sfClient.getAssetByAccountNameAndCustomFieldValue("MyTestAccount", "A");
+        System.out.println(map);
+        System.out.println("-------getAssetByAccountNameAndCustomFieldValue-----");
     }
 
     private void getAccountMetaByName(){

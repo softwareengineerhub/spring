@@ -87,3 +87,5 @@ target/
 /JTA/My-Spring5-JTA-datasources/tmlog3.log
 /JTA/spring-boot2-jta-sql-jdbc/*.iml
 /JTA/spring-boot2-jta-sql-jpa/*.iml
+/DTO-ENTITY/spring-boot-modelmapper/spring-boot-modelmapper.iml
+/DTO-ENTITY/spring-boot-modelmapper/spring-boot-modelmapper.iml
