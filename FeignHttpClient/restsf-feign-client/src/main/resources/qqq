@@ -1,0 +1,7 @@
+https://eu31.salesforce.com/services/data/v20.0/query/?q=SELECT+Id,name+From+Asset+WHERE+Account.Id='0015I00000BlduCQAR'
+
+
+
+
+SELECT+Id,name+From+Asset+WHERE+Account.Id=(SELECT+Account.Id+From+Asset+WHERE+Asset.Name='MyTestAssert')
+
