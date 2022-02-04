@@ -89,3 +89,8 @@ target/
 /JTA/spring-boot2-jta-sql-jpa/*.iml
 /DTO-ENTITY/spring-boot-modelmapper/spring-boot-modelmapper.iml
 /DTO-ENTITY/spring-boot-modelmapper/spring-boot-modelmapper.iml
+/Logging/my-sl4j-sample-xml/my-sl4j-sample-xml.iml
+/Logging/my-sl4j-sample/*.iml
+/Logging/my-sl4j-sample-xml/my-sl4j-sample-xml.iml
+/Logging/my-sl4j-sample/my-sl4j-sample.iml
+/JMX/JMXSample/JMXSample.iml
