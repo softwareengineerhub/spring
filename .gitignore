@@ -94,3 +94,14 @@ target/
 /Logging/my-sl4j-sample-xml/my-sl4j-sample-xml.iml
 /Logging/my-sl4j-sample/my-sl4j-sample.iml
 /JMX/JMXSample/JMXSample.iml
+/Logging/my-sl4j-sample/app.log.2020-08-17.0.gz
+/Logging/my-sl4j-sample/app.log
+/JDBC/spring-boot-jdbc-config-template/spring-boot-jdbc-config-template.iml
+/JDBC/spring-boot-jdbc-config/spring-boot-jdbc-config.iml
+/JMX/Spring5-JMX-app/Spring5-JMX-app.iml
+/JPA/mavenproject19/mavenproject19.iml
+/JTA/My-Spring5-JTA-database-jms/My-Spring5-JTA-database-jms.iml
+/JTA/My-Spring5-JTA-database-jms/tmlog3.log
+/JTA/My-Spring5-JTA-database-jms/tmlog.lck
+/JTA/spring-boot2-jta-sql-jdbc/tmlog.lck
+/JTA/spring-boot2-jta-sql-jdbc/tmlog1.log
