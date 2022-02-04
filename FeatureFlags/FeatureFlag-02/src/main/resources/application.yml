@@ -1,0 +1,3 @@
+feature-flags:
+  is-new-books-service-enabled: true
+  is-new-papers-service-enabled: false
