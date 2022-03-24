@@ -1,0 +1,22 @@
+To start influx-v2:
+https://dzone.com/articles/spring-boot-and-micrometer-with-inlfuxdb-part-2-ad
+docker run --rm -p 8086:8086 --name influxdb-local influxdb
+
+
+http://localhost:8086/
+user:root
+password:11111111
+organization: mycompany
+bucket: mybucket
+
+Query:
+https://docs.influxdata.com/influxdb/v2.1/query-data/get-started/query-influxdb/
+
+Explore metrics:
+https://docs.influxdata.com/influxdb/v2.1/query-data/execute-queries/data-explorer/
+
+Dashboard:
+https://docs.influxdata.com/influxdb/v2.1/visualize-data/dashboards/
+
+Write a task:
+https://docs.influxdata.com/influxdb/v2.1/process-data/get-started/

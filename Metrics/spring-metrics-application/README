@@ -1,0 +1,17 @@
+Micrometer library
+
+https://docs.spring.io/spring-metrics/docs/current/public/prometheus
+https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.metrics
+---------------------------------------------------
+How to access metrics from UI:
+http://127.0.0.1:8080/actuator/
+http://127.0.0.1:8080/actuator/metrics
+http://127.0.0.1:8080/actuator/metrics/hello
+
+to increase metric - simply visite utl:
+http://127.0.0.1:8080/hello
+---------------------------------------------------
+Counter - simle increment that can be reset to 0
+Gauge - could be decremented and incremented (almost same to gauge)
+
+
