@@ -1,0 +1,18 @@
+https://www.youtube.com/watch?v=0CpHwszFjUY
+
+
+1) Run docker container
+docker run -d --name influxdb -p 8086:8086 -e INFLUXDB_ADMIN_USER=admin -e INFLUXDB_ADMIN_PASSWORD=admin123 -v influxdbdata:/var/lib/influxdb influxdb:1.8.10
+
+2) cli into container (via UI)
+Commands to manage the database:
+influx
+show databases;
+create database databasename
+use database dbname
+show measurements
+INSERT cpu,host=serverA value=1
+INSERT cpu,host=serverA value=2
+
+select * from cpu
+
