@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface StudentsRepository extends CrudRepository<Student, Long> {
 
     @Query("SELECT s FROM Student s WHERE s.courses is empty")

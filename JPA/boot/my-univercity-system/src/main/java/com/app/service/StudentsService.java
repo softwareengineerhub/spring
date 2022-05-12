@@ -39,7 +39,7 @@ public class StudentsService {
         studentsRepository.deleteAll();
     }
 
-    public List<Course> findCoursesForUser(long userId){
+    public List<Course> findCoursesForUser(long userId) {
         Student student = studentsRepository.findById(userId).get();
         return student.getCourses();
     }

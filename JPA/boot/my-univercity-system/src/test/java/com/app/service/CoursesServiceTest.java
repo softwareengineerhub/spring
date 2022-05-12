@@ -1,13 +1,10 @@
 package com.app.service;
 
 import com.app.model.Course;
-import com.app.service.CoursesService;
-import com.app.service.StudentsService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.sql.DataSource;
