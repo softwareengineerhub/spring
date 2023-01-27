@@ -19,15 +19,26 @@ public class ProducerController {
     @GetMapping("/create")
     public void produceSimpleMessage(@RequestParam int count) {
         for(int i=0;i<count;i++){
-            sendBinaryMessage(i);
+            sendTextMessage(i);
         }
+    }
+
+    private void sendTextMessage(int i){
+        SimpleMessage simpleMessage = new SimpleMessage();
+        simpleMessage.setName("Name1");
+        simpleMessage.setDescription(i+"description1"+ LocalTime.now());
+        String exchange = "MyTopicExchange";
+        String routingKey = "topic";
+        rabbitTemplate.convertAndSend(exchange, routingKey, simpleMessage.toString());
     }
 
     private void sendBinaryMessage(int i){
         SimpleMessage simpleMessage = new SimpleMessage();
         simpleMessage.setName("Name1");
         simpleMessage.setDescription(i+"description1"+ LocalTime.now());
-        rabbitTemplate.convertAndSend("TestExchange", "TestRoutingKey", simpleMessage);
+        String exchange = "MyTopicExchange";
+        String routingKey = "topic";
+        rabbitTemplate.convertAndSend(exchange, routingKey, simpleMessage);
     }
 
     private void sendToExchangeWithRoutingKey(){
