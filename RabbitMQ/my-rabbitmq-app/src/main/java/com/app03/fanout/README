@@ -1,0 +1,5 @@
+1 message will be sent to multiple consumers
+
+If we want also use RPC-->
+fo1 1 producer and 3 Consumers
+1 Producer will recieve back 3 messages

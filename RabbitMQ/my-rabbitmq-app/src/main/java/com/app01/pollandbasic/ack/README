@@ -1,0 +1,14 @@
+for autoAck=false Consumer behaviour is AT MOST ONCE (possible duplication)
+
+
+//ack only this single message
+
+long deliveryTag - id of the message
+false - to ack only current single message
+ channel.basicAck(long deliveryTag, false);
+
+
+
+ long deliveryTag = delivery.getEnvelope().getDeliveryTag();
+ boolean isMultiple = false;
+ channel.basicAck(deliveryTag, isMultiple);
