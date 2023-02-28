@@ -1,0 +1,40 @@
+https://github.com/keycloak/keycloak/releases/tag/15.0.2
+
+To start:
+C:\Soft\keycloak-15.0.2\bin
+from cmd --> standalone
+
+
+To access admin page:
+http://localhost:8080/auth/
+(by default it uses H2 database)
+--------------------------------------
+To change port:
+standalone.xml:
+<socket-binding> jboss.http.port - change to needed value (9090)
+For now let it be 8080
+-----------------------------------------
+Create admin user:
+http://localhost:8080/auth/
+admin/admin
+Go to admin console:
+http://127.0.0.1:8080/auth/admin/master/console/#/realms/master
+-----------------------------------------
+REALM - realm about users, roles and groups
+CLIENT - app that uses a keycloack
+
+--------------------------------------
+To get MySQL:
+https://dev.mysql.com/downloads/connector/j/
+select Platform Independent; download zip
+Take mysql-connector-j-8.0.32.jar
+Create dir C:\Soft\keycloak-15.0.2\modules\system\layers\keycloak\com\mysql\main
+and copy jar into
+And also we need to add module.xml
+
+To Configure dataSource
+C:\Soft\keycloak-15.0.2\standalone\configuration\standalone.xml
+
+
+
+
