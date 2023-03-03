@@ -1,0 +1,53 @@
+version: "3.7"
+
+services:
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    ports:
+      - "3308:3306"
+    restart: "no"
+    volumes:
+      - "./myinit/myinitA.sql:/docker-entrypoint-initdb.d/1.sql"
+      - "./myinit/myinitB.sql:/docker-entrypoint-initdb.d/2.sql"
+      - "./myinit/myinitC.sql:/docker-entrypoint-initdb.d/3.sql"
+      - "./myinit/myinitD.sql:/docker-entrypoint-initdb.d/4.sql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=11111111
+      - MYSQL_DATABASE=my-keycloack
+    healthcheck:
+      test: ["CMD-SHELL", "mysql --user=root --password=11111111 --execute 'select count(1) from my-keycloack.user;' || exit 1"]
+      interval: 15s
+      timeout: 2s
+      retries: 5
+      start_period: 15s
+
+  my-keycloack-spring-app1:
+    depends_on:
+      - mysql
+    image: mysec
+    container_name: my-keycloack-spring-app1
+    ports:
+      - "8081:8080"
+    restart: "no"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/my-keycloack?verifyServerCertificate=false&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=11111111
+      - SPRING_JPA_DATABASE=mysql
+
+  my-keycloack-spring-app2:
+    depends_on:
+      - mysql
+    image: mysec
+    container_name: my-keycloack-spring-app2
+    ports:
+      - "8082:8080"
+    restart: "no"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/my-keycloack?verifyServerCertificate=false&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=11111111
+      - SPRING_JPA_DATABASE=mysql
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.jdbc.Driver
