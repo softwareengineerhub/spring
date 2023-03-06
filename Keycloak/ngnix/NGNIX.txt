@@ -1,0 +1,6 @@
+dOCKER:
+https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Docker-Nginx-reverse-proxy-setup-example
+
+DOCKER-COMPOSE:
+https://habr.com/ru/post/687210/
+
