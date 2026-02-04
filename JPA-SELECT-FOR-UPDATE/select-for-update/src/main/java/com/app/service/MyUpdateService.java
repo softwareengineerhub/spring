@@ -16,14 +16,14 @@ public class MyUpdateService {
     private UserRepository userRepository;
 
     @Transactional
-    public void process(){
-        List<User> list = userRepository.findAllById(Arrays.asList(1,2,3,4));
-        System.out.println("\t###simple update:size="+list.size());
-        for(User user: list){
-            System.out.println("\t###"+user);
+    public void process() {
+        List<User> list = userRepository.findAllById(Arrays.asList(10, 11, 12, 13));
+        System.out.println("\t###simple update:size=" + list.size());
+        for (User user : list) {
+            System.out.println("\t###" + user);
         }
-        for(User u: list){
-            u.setPassword("\t###update"+new Date());
+        for (User u : list) {
+            u.setPassword("\t###update" + new Date());
         }
         System.out.println("\t###simple update @Before save");
         userRepository.saveAll(list);
