@@ -1,0 +1,5 @@
+1. What is the difference between signing and encryption in scope of JWT token ?
+
+2. Please explaine theoretically and show some examples for java: <dependency> <groupId>io.jsonwebtoken</groupId> <artifactId>jjwt</artifactId> <version>0.9.1</version> </dependency>
+
+3. https://www.youtube.com/watch?v=UBUNrFtufWo&t=4s

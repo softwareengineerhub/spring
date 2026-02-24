@@ -2,12 +2,11 @@ package com.denistech.jwt.api.controller;
 
 import com.denistech.jwt.api.util.JwtUtil;
 import com.denistech.jwt.api.util.JwtUtil2;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class ValidateTokenControllerForTesting {
@@ -21,7 +20,8 @@ public class ValidateTokenControllerForTesting {
     public String getToken(HttpServletRequest request){
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        return jwtUtil.generateToken(username, password);
+        String role = request.getParameter("role");
+        return jwtUtil.generateToken(username, password, role);
     }
 
     @PostMapping("/test/validateToken")

@@ -4,26 +4,37 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
 @Component
-public class JwtUtil2 {
-    private String secret = "TEST";
+public class JwtUtil02 {
+    private String secret;
 
-    public String generateToken(String username, String password) {
+    @PostConstruct
+    public void init(){
+        for(int i=0;i<256;i++){
+            secret=secret+"b";
+        }
+    }
+
+    public String generateToken(String username, String password, String role) {
         Map<String, Object> map = new HashMap<>();
         map.put("password", password);
+        map.put("role", role);
         return createToken(username, map);
     }
 
+    // "alg": "HS256"
+    //encoded "test" --> f("test") = "sdgfhfvsfvkdfi095r08t39"
+    //decoded "sdgfhfvsfvkdfi095r08t39" --> g("sdgfhfvsfvkdfi095r08t39") = "test"
     private String createToken(String username, Map<String, Object> claims) {
         return Jwts.builder().addClaims(claims).setSubject(username)
                 .setIssuedAt(new Date())
@@ -53,5 +64,6 @@ public class JwtUtil2 {
     private SecretKey getSecretKey() {
         return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
+
 
 }
