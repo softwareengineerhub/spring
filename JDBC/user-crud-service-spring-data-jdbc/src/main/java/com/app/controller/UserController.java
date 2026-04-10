@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 
 @RestController
@@ -37,6 +38,19 @@ public class UserController {
         userRepository.updateUserByAge(user.getName(), user.getAge(), age);
     }
 
+    @PutMapping(path = "/user-verison-increment")
+    public void updateByAgeWithVersionIncrement(@RequestBody User user,
+                                                @RequestParam(name = "id") long id) {
+        userRepository.findById(id).ifPresent(
+                userItem -> {
+                    userItem.setName(user.getName());
+                    userItem.setAge(user.getAge());
+                    userRepository.save(userItem);
+                }
+        );
+
+    }
+
     @DeleteMapping(path = "/user/{name}/{age}")
     public void deleteByNameAndAge(@PathVariable(name = "name") String name,
                                    @PathVariable(name = "age") int age) {
@@ -49,13 +63,13 @@ public class UserController {
         user.setAge(1);
         user.setName("TestUsr1");
         User user1 = userRepository.save(user);
-        System.out.println("----------After user1.save----------------user1="+user1);
+        System.out.println("----------After user1.save----------------user1=" + user1);
 
         User user2 = new User();
         user2.setName("TestUsr1");
         user2.setAge(2);
         User user3 = new User();
-        user3.setName("Update"+user1.getName());
+        user3.setName("Update" + user1.getName());
         user3.setAge(user1.getAge());
         user3.setId(user1.getId());
 

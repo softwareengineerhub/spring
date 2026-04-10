@@ -2,6 +2,7 @@ package com.app.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
 
 @JsonIgnoreProperties(value = { "id"})
 public class User {
@@ -9,6 +10,8 @@ public class User {
     private Long id;
     private String name;
     private int age;
+    @Version
+    private int version;
 
     public User(Long id, String name, int age) {
         this.id = id;
@@ -48,12 +51,21 @@ public class User {
         this.age = age;
     }
 
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", version=" + version +
                 '}';
     }
 }
