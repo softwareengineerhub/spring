@@ -14,7 +14,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 
-@Configuration
+//@Configuration
 public class MySecurityConfiguration2 {
     @Autowired
     private MyUserDetailsService myUserDetailsService;
